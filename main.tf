@@ -33,14 +33,14 @@ resource "aws_ecr_lifecycle_policy" "this" {
   policy     = var.lifepolicy
 }
 
-resource "aws_ecr_replication_configuration" "this" {
-  count = var.create_replication ? 1 : 0
-  replication_configuration {
-    rule {
-      destination {
-        region      = var.replication_region
-        registry_id = var.replication_account
-      }
-    }
-  }
-}
+# resource "aws_ecr_replication_configuration" "this" {
+#   count = var.create_replication ? 1 : 0
+#   replication_configuration {
+#     rule {
+#       destination {
+#         region      = var.replication_region
+#         registry_id = var.replication_account
+#       }
+#     }
+#   }
+# }
